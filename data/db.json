@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Lješnjak",
+      "price": 10,
+      "src": "assets/ljesnjak.png",
+      "alt": "ljesnjak"
+    },
+    {
+      "id": 2,
+      "name": "Lješnjak - božićno pakiranje",
+      "price": 5,
+      "src": "assets/bozic.png",
+      "alt": "bozic"
+    },
+    {
+      "id": 3,
+      "name": "Sok jabuka ",
+      "price": 2,
+      "src": "assets/jabuka.jpg",
+      "alt": "jabuka"
+    },
+    {
+      "id": 4,
+      "name": "Sok kruška",
+      "price": 2,
+      "src": "assets/kruska.jpg",
+      "alt": "kruska"
+    },
+    {
+      "id": 5,
+      "name": "Sok jabuka-aronija",
+      "price": 2,
+      "src": "assets/aronija.jpg",
+      "alt": "aronija"
+    },
+    {
+      "id": 6,
+      "name": "Med (200g)",
+      "price": 4,
+      "src": "assets/med.png",
+      "alt": "med"
+    },
+    {
+      "id": 7,
+      "name": "Med (1kg)",
+      "price": 8,
+      "src": "assets/medKg.png",
+      "alt": "medKg"
+    }
+  ]
+}
