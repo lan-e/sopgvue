@@ -7,7 +7,7 @@ const getProductDetails = (id) => {
   const loadData = async () => {
     try {
       let data = await fetch(
-        `https://api.npoint.io/fda4e9552d5f4096efb8/products/${id}`
+        `https://api.npoint.io/e5a951fdf3893ef1bb30/products/${id}`
       );
       if (!data.ok) {
         throw Error("no product details");

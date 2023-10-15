@@ -6,7 +6,7 @@ const getProductsData = () => {
   const loadData = async () => {
     try {
       let data = await fetch(
-        "https://api.npoint.io/fda4e9552d5f4096efb8/products"
+        "https://api.npoint.io/e5a951fdf3893ef1bb30/products"
       );
       products.value = await data.json();
       console.log(products);
