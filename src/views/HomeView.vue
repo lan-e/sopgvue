@@ -3,23 +3,25 @@
     <div v-if="products.length">
       <div v-for="product in products" class="products">
         <router-link :to="{ name: 'ProductDetails', params: { id: product.id } }" class="productName">
-          <img :src="product.src" alt="sm" class="productImg">
+          <img :src="product.src" alt="sm" class="productImg" rel="preload">
           <p>{{ product.name }}</p>
           <p class="price">{{ product.price }}€</p>
         </router-link>
       </div>
     </div>
-    <div v-else>Loading products...</div>
+    <div v-else>
+      <Loader />
+    </div>
   </div>
 </template>
 
 <script>
 import getProductsData from "../composables/getProductsData"
+import Loader from "../components/Loader.vue"
 
 export default {
   name: 'HomeView',
-  components: {
-  },
+  components: { Loader },
   setup() {
     const { loadData, products, error } = getProductsData()
     loadData()

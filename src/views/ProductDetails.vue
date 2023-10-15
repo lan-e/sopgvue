@@ -4,16 +4,18 @@
             <h2>{{ product.name }}</h2>
         </div>
         <div v-else>
-            Loading product details...
+            <Loader />
         </div>
     </div>
 </template>
 
 <script>
 import getProductDetails from "../composables/getProductDetails"
+import Loader from "../components/Loader.vue"
 
 export default {
     props: ["id"],
+    components: { Loader },
     setup(props) {
         const { loadData, product, error } = getProductDetails(props.id)
         loadData()
