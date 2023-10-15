@@ -1,11 +1,14 @@
 <template>
-  <div class="home">
-    <div v-if="products.length">
-      <div v-for="product in products" class="products">
-        <router-link :to="{ name: 'ProductDetails', params: { id: product.id } }" class="productName">
+  <div class="container">
+    <div v-if="products.length" class="home">
+      <div v-for="product in products" class="productBg">
+        <router-link :to="{ name: 'ProductDetails', params: { id: product.id } }" class="product">
           <img :src="product.src" alt="sm" class="productImg" rel="preload">
           <p>{{ product.name }}</p>
-          <p class="price">{{ product.price }}€</p>
+          <div class="flexRowEnd">
+            <font-awesome-icon :icon="['fas', 'bag-shopping']" class="ico" />
+            <div class="price">{{ product.price }}€</div>
+          </div>
         </router-link>
       </div>
     </div>
@@ -13,15 +16,17 @@
       <Loader />
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
 import getProductsData from "../composables/getProductsData"
 import Loader from "../components/Loader.vue"
+import Footer from "../components/Footer.vue"
 
 export default {
   name: 'HomeView',
-  components: { Loader },
+  components: { Loader, Footer },
   setup() {
     const { loadData, products, error } = getProductsData()
     loadData()
@@ -35,23 +40,23 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
-.products {
+.productBg {
   background-color: antiquewhite;
   padding: 48px;
   border-radius: 16px;
   margin: 16px;
 }
 
-.productName {
+.product {
   color: #9e4d30;
   font-weight: 600;
   text-decoration: none;
 }
 
-.productName:hover {
+.product:hover {
   color: #d38f76;
 }
 
@@ -61,6 +66,12 @@ export default {
 }
 
 .price {
-  font-weight: 600;
+  text-align: right;
+  font-size: 24px;
+}
+
+.ico {
+  font-size: 20px;
+  margin-right: 4px;
 }
 </style>

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  user-select: none;
+}
+.container {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.flexRowEnd {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: end;
+}
+.flexRowCenter {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
