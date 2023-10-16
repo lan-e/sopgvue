@@ -3,7 +3,7 @@ import { ref } from "vue";
 const getProductsData = () => {
   const products = ref([]);
   const error = ref(null);
-  const loadData = async () => {
+  const loadProductsData = async () => {
     try {
       let data = await fetch(
         "https://api.npoint.io/e5a951fdf3893ef1bb30/products"
@@ -18,6 +18,6 @@ const getProductsData = () => {
       console.log(error.value);
     }
   };
-  return { loadData, products, error };
+  return { loadProductsData, products, error };
 };
 export default getProductsData;

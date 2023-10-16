@@ -2,8 +2,12 @@
   <div class="container">
     <div v-if="products.length" class="home">
       <div v-for="product in products" class="productBg">
-        <router-link :to="{ name: 'ProductDetails', params: { id: product.id } }" class="product">
-          <img :src="product.src" alt="sm" class="productImg" rel="preload">
+        <router-link
+          :to="{ name: 'ProductDetails', params: { id: product.id } }"
+          class="product"
+        >
+          {{ console.log(product.src) }}
+          <img :src="product.src" alt="sm" class="productImg" rel="preload" />
           <p>{{ product.name }}</p>
           <div class="flexRowEnd">
             <font-awesome-icon :icon="['fas', 'bag-shopping']" class="ico" />
@@ -20,19 +24,19 @@
 </template>
 
 <script>
-import getProductsData from "../composables/getProductsData"
-import Loader from "../components/Loader.vue"
-import Footer from "../components/Footer.vue"
+import getProductsData from "../composables/getProductsData";
+import Loader from "../components/Loader.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: { Loader, Footer },
   setup() {
-    const { loadData, products, error } = getProductsData()
-    loadData()
-    return { products, error }
-  }
-}
+    const { loadProductsData, products, error } = getProductsData();
+    loadProductsData();
+    return { products, error };
+  },
+};
 </script>
 
 <style>
@@ -41,6 +45,7 @@ export default {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 200px;
 }
 
 .productBg {
