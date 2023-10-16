@@ -6,8 +6,12 @@
           :to="{ name: 'ProductDetails', params: { id: product.id } }"
           class="product"
         >
-          {{ console.log(product.src) }}
-          <img :src="product.src" alt="sm" class="productImg" rel="preload" />
+          <img
+            :src="require(`@/assets/img/${product.src}`)"
+            :alt="product.alt"
+            class="productImg"
+            rel="preload"
+          />
           <p>{{ product.name }}</p>
           <div class="flexRowEnd">
             <font-awesome-icon :icon="['fas', 'bag-shopping']" class="ico" />
